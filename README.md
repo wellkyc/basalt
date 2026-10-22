@@ -37,6 +37,13 @@ cargo install --path .
 
 Needs Rust 1.88+.
 
+On Windows, if you get `linker link.exe not found`, you don't have the Visual Studio C++ build tools. Instead of installing them you can build with the GNU toolchain:
+
+```bash
+rustup toolchain install stable-x86_64-pc-windows-gnu
+cargo +stable-x86_64-pc-windows-gnu install --path .
+```
+
 ## Usage
 
 ```bash

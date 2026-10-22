@@ -71,6 +71,70 @@ runtime error: Type mismatch: cannot apply + to a number and a string
   |       ^^^^^^^^^^
 ```
 
+## Writing a program
+
+Put your code in a `.bas` file and run it with `basalt file.bas`. One statement per line, or several on one line separated by `:`.
+
+Print stuff and store values. No declarations needed, a `$` at the end of a name means it's a string:
+
+```basic
+name$ = "Ann"
+age = 30
+PRINT "Hi, "; name$; "! Next year you'll be "; age + 1
+```
+
+Ask the user for input:
+
+```basic
+INPUT "What's your name"; name$
+INPUT "How old are you"; age
+```
+
+Branches and loops:
+
+```basic
+IF age >= 18 THEN
+    PRINT "adult"
+ELSE
+    PRINT "kid"
+END IF
+
+FOR i = 1 TO 5
+    PRINT i;
+NEXT
+
+DO
+    INPUT "Guess"; g
+LOOP UNTIL g = 7
+```
+
+Arrays start at index 0 and `DIM a(5)` gives you `a(0)` through `a(5)`:
+
+```basic
+DIM scores(5)
+FOR i = 0 TO 5
+    scores(i) = i * 10
+NEXT
+PRINT scores(3)
+```
+
+`SUB` is a procedure, `FUNCTION` returns a value by assigning to its own name. Variables inside them are local:
+
+```basic
+SUB Greet (who$)
+    PRINT "Hello, "; who$
+END SUB
+
+FUNCTION Area (w, h)
+    Area = w * h
+END FUNCTION
+
+Greet "Bob"
+PRINT Area(3, 4)
+```
+
+For random numbers call `RANDOMIZE TIMER` once, then `INT(RND * 6) + 1` gives a dice roll. `COLOR`, `LOCATE` and `CLS` let you draw in the terminal, see `examples/bounce.bas`.
+
 ## Examples
 
 ```basic

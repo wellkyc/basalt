@@ -29,6 +29,22 @@ $ basalt examples/mandelbrot.bas
 
 ## Install
 
+Windows (PowerShell):
+
+```powershell
+irm https://raw.githubusercontent.com/wellkyc/basalt/main/install.ps1 | iex
+```
+
+Linux and macOS:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/wellkyc/basalt/main/install.sh | sh
+```
+
+The script downloads the latest release for your system, puts `basalt` into `%LOCALAPPDATA%\basalt\bin` or `~/.local/bin` and adds it to PATH on Windows. Open a new terminal afterwards. You can also grab the archive yourself from [Releases](https://github.com/wellkyc/basalt/releases), there are builds for Windows x64, Linux x64/arm64 and macOS Intel/Apple Silicon.
+
+### From source
+
 ```bash
 git clone https://github.com/wellkyc/basalt.git
 cd basalt
